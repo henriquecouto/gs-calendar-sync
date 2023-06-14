@@ -17,3 +17,9 @@ To define your habits, just open the `config.gs` file and update the habits arra
 > ```
 
 With the habits setup done, just create events in your calendar with the same title you defined in the habits array.
+
+## Triggers
+To keep the calendars in sync you need to create 2 triggers that will run the script.
+
+## Thanks
+This script is created based on [this gist file](https://gist.github.com/ttrahan/a88febc0538315b05346f4e3b35997f2).
