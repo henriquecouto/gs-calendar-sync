@@ -1,6 +1,5 @@
 const defaultCalendar = CalendarApp.getDefaultCalendar();
-const calendarToSync = CalendarApp.getCalendarById('henrique.coutu69@gmail.com');
-
+const calendarToSync = CalendarApp.getCalendarById('calendar-id-to-sync');
 const daysNumberToSync = 30;
 
 const habits = ["🍝 Lunch Time"];
