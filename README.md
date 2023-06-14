@@ -1,4 +1,4 @@
-# Google Script Calendar Sync
+# Google App Script Calendar Sync
 
 This project allows you to sync events in two calendars (e.g. `Work Calendar` and `Personal Calendar`).
 
@@ -20,6 +20,13 @@ With the habits setup done, just create events in your calendar with the same ti
 
 ## Triggers
 To keep the calendars in sync you need to create 2 triggers that will run the script.
+
+In the triggers tab in your Google Apps Script project, create the first trigger to run `SyncPersonalToWork` and another to run `SyncWorkToPersonal`.
+
+You can select the options you prefer, but we recommend that you use the options as follows:
+> Select event source: `Time-driven` <br/>
+> Select type of time based trigger: `Minutes timer` <br/> 
+> Select minute interval: `Every 10 minutes`
 
 ## Thanks
 This script is created based on [this gist file](https://gist.github.com/ttrahan/a88febc0538315b05346f4e3b35997f2).
