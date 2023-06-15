@@ -1,29 +1,10 @@
-function CalendarSync(reverse = false) {
+function CalendarSync({ primaryCalendar, secondaryCalendar, eventTitle }) {
   const today=new Date();
   const enddate=new Date();
   enddate.setDate(today.getDate() + daysNumberToSync);
-  
-  let primaryCalendar;
-  let secondaryCalendar;
 
-  let primaryCalendarEvents;
-  let secondaryCalendarEvents;
-
-  if(reverse) {
-    primaryCalendar = calendarToSync;
-    primaryCalendarEvents = calendarToSync.getEvents(today, enddate);
-
-    secondaryCalendar = defaultCalendar;
-    secondaryCalendarEvents = defaultCalendar.getEvents(today, enddate);
-  } else {
-    secondaryCalendar = calendarToSync;
-    secondaryCalendarEvents = calendarToSync.getEvents(today, enddate);
-
-    primaryCalendar = defaultCalendar;
-    primaryCalendarEvents = defaultCalendar.getEvents(today, enddate);
-  }
-
-  const eventTitle = reverse? workEventTitle : personalEventTitle;
+  const primaryCalendarEvents = primaryCalendar.getEvents(today, enddate);
+  const secondaryCalendarEvents = secondaryCalendar.getEvents(today, enddate);
   
   let stat=1;
   let evi, existingEvent; 
@@ -123,9 +104,17 @@ function CalendarSync(reverse = false) {
 }  
 
 function SyncWorkToPersonal () {
-  CalendarSync(true);
+  CalendarSync({
+    primaryCalendar: calendarToSync,
+    secondaryCalendar: defaultCalendar,
+    eventTitle: workEventTitle
+  });
 }
 
 function SyncPersonalToWork () {
-  CalendarSync(false);
+  CalendarSync({
+    primaryCalendar: defaultCalendar,
+    secondaryCalendar: calendarToSync,
+    eventTitle: personalEventTitle
+  });
 }
