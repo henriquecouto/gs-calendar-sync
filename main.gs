@@ -101,20 +101,10 @@ function CalendarSync({ primaryCalendar, secondaryCalendar, eventTitle }) {
   Logger.log('Primary events updated: ' + primaryEventsUpdated.length);
   Logger.log('Primary events deleted: ' + primaryEventsDeleted.length);
   Logger.log('Primary events created: ' + primaryEventsCreated.length);
-}  
-
-function SyncWorkToPersonal () {
-  CalendarSync({
-    primaryCalendar: calendarToSync,
-    secondaryCalendar: defaultCalendar,
-    eventTitle: workEventTitle
-  });
 }
 
-function SyncPersonalToWork () {
-  CalendarSync({
-    primaryCalendar: defaultCalendar,
-    secondaryCalendar: calendarToSync,
-    eventTitle: personalEventTitle
-  });
+function StartSync () {
+  syncs.forEach((sync) => {
+    CalendarSync(sync)
+  })
 }
