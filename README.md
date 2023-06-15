@@ -18,15 +18,15 @@ To define your habits, just open the `config.gs` file and update the habits arra
 
 With the habits setup done, just create events in your calendar with the same title you defined in the habits array.
 
-## Triggers
-To keep the calendars in sync you need to create 2 triggers that will run the script.
+## Automated sync
+To keep the calendars in sync you need to create a trigger that will run the script.
 
-In the triggers tab in your Google Apps Script project, create the first trigger to run `SyncPersonalToWork` and another to run `SyncWorkToPersonal`.
+In the triggers tab in your Google Apps Script project, add a new trigger to run `StartSync`.
 
-You can select the options you prefer, but we recommend that you use the options as follows:
+You can select the options you prefer, but it is recommended that you use the options as follows:
 > Select event source: `Time-driven` <br/>
 > Select type of time based trigger: `Minutes timer` <br/> 
-> Select minute interval: `Every 10 minutes`
+> Select minute interval: `Every 10 minutes` <sup>Or greater</sup>
 
 ## Thanks
 This script is created based on [this gist file](https://gist.github.com/ttrahan/a88febc0538315b05346f4e3b35997f2).
