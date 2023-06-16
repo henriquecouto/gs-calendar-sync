@@ -1,6 +1,8 @@
 function CalendarSync({ primaryCalendar, secondaryCalendar, eventTitle }) {
   const today=new Date();
   const enddate=new Date();
+  
+  today.setHours(0, 0, 0, 0);
   enddate.setDate(today.getDate() + daysNumberToSync);
 
   const primaryCalendarEvents = primaryCalendar.getEvents(today, enddate);
