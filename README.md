@@ -12,6 +12,7 @@ This project allows you to sync events in two calendars (e.g. `Work Calendar` an
 You can create <b>Habits</b> (e.g. `Lunch Time`, `Focus Time`) that will sync, but the script will keep the original title of the event.
 
 To define your habits, just open the `config.gs` file and update the habits array.
+
 > ```js
 > const habits = ["🍝 Lunch Time", "🧐 Focus Time"];
 > ```
@@ -19,14 +20,17 @@ To define your habits, just open the `config.gs` file and update the habits arra
 With the habits setup done, just create events in your calendar with the same title you defined in the habits array.
 
 ## Automated sync
+
 To keep the calendars in sync you need to create a trigger that will run the script.
 
 In the triggers tab in your Google Apps Script project, add a new trigger to run `StartSync`.
 
 You can select the options you prefer, but it is recommended that you use the options as follows:
+
 > Select event source: `Time-driven` <br/>
 > Select type of time based trigger: `Minutes timer` <br/> 
 > Select minute interval: `Every 10 minutes` <sup>Or greater</sup>
 
 ## Thanks
+
 This script is created based on [this gist file](https://gist.github.com/ttrahan/a88febc0538315b05346f4e3b35997f2).
