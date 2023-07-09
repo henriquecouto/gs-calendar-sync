@@ -13,9 +13,9 @@ You can create <b>Habits</b> (e.g. `Lunch Time`, `Focus Time`) that will sync, b
 
 To define your habits, just open the `config.gs` file and update the habits array.
 
-```js
-const habits = ["🍝 Lunch Time", "🧐 Focus Time"];
-```
+> ```js
+> const habits = ["🍝 Lunch Time", "🧐 Focus Time"];
+> ```
 
 With the habits setup done, just create events in your calendar with the same title you defined in the habits array.
 
